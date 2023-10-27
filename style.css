@@ -77,21 +77,40 @@ h1 {
     margin: 5px; 
 }
 
-/* Webkit-based scrollbar styling */
-.table-wrapper::-webkit-scrollbar {
+/* Styles for Webkit browsers (Chrome, Safari) */
+.table-wrapper1::-webkit-scrollbar {
     width: 12px;
 }
 
-.table-wrapper::-webkit-scrollbar-thumb {
-    background: #333; /* Change this color to make the scrollbar thumb darker */
-    border-radius: 6px;
+.table-wrapper1::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
 }
 
-.table-wrapper::-webkit-scrollbar-thumb:hover {
-    background: #222; /* Change this color for the hover effect */
+.table-wrapper2::-webkit-scrollbar {
+    width: 12px;
 }
 
-.table-wrapper::-webkit-scrollbar-track {
-    background: #555; /* Change this color to make the scrollbar track darker */
-    border-radius: 6px;
+.table-wrapper2::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+/* Styles for Firefox */
+.table-wrapper1 {
+    scrollbar-width: thin;
+}
+
+.table-wrapper1::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.table-wrapper2 {
+    scrollbar-width: thin;
+}
+
+.table-wrapper2::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
 }
