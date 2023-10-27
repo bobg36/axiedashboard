@@ -42,11 +42,7 @@ def generate_folder_html(folder_path):
                 title = os.path.splitext(filename)[0]
                 table = csv_to_html_table(file_path)
                 if table:
-                    # print('true')
-                    if filename == 'bred.csv' or filename == 'virgin.csv':
-                        folder_html += f'<div class="table-wrapper1"><div class="table-title">{title}</div>{table}</div>'
-                    elif filename == 'floor.csv' or filename == 'sales.csv':
-                        folder_html += f'<div class="table-wrapper2"><div class="table-title">{title}</div>{table}</div>'
+                    folder_html += f'<div class="table-wrapper"><div class="table-title">{title}</div>{table}</div>'
             elif filename.endswith('.png'):
                 folder_html += f'<img src="{file_path}" alt="{filename}">'
     
