@@ -28,12 +28,14 @@ def get_image_url_from_sales_csv(csv_file_path):
 # Function to generate HTML code for a folder
 def generate_folder_html(folder_path):
     folder_name = os.path.basename(folder_path)
+    fallback_image_url = "https://assets.axieinfinity.com/axies/821/axie/axie-full-transparent.png"
+
 
     # Get the image URL from sales.csv
     sales_csv_path = os.path.join(folder_path, 'sales.csv')
     image_url = get_image_url_from_sales_csv(sales_csv_path)
 
-    folder_html = f'<div class="table-container"><h2><img src="{image_url}"></h2>'
+    folder_html = f'<div class="table-container"><h2><img src="{image_url}" onerror="this.src=\'{fallback_image_url}\';"></h2>'
     
     for filename in file_order:
         file_path = os.path.join(folder_path, filename)
