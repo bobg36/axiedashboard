@@ -1,0 +1,27 @@
+1. run customQuery from: C:\Users\bobgu\Desktop\record all sales july 2023\walletpy\marketfloor\
+
+
+2. run 'copy_local_data.py' to copy generated data to cwd
+
+
+3. run 'generate_html.py' to generate html file for website
+
+
+4. run website locally:
+
+
+python -m http.server --bind 127.0.0.1 --cgi
+
+or
+
+python -m http.server
+http://localhost:8000/
+
+
+5. push to github pages
+
+
+git add .
+git commit -m "Your new commit message here"
+
+git push origin main
