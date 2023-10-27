@@ -81,8 +81,12 @@ def generate_html_page(directory_path, output_filename):
     <!DOCTYPE html>
     <html>
     <head>
-        <a href="all_birds.html" class="button">all_birds</a>
-        <a href="koi_aqua.html" class="button button1">koi_aqua</a>
+        <div class="header">
+            <a href="all_birds.html" class="button">all_birds</a>
+            <a href="koi_aqua.html" class="button button1">koi_aqua</a>
+            <a href="dusk_lunge.html" class="button button2">dusk_lunge</a>
+            <a href="custom_breed.html" class="button button3">custom_breed</a>
+        </div>
         <link rel="stylesheet" type="text/css" href="style.css">
     <body>
         {all_html}
@@ -100,3 +104,9 @@ generate_html_page('data/all_birds', 'all_birds.html')
 
 # Generate HTML for 'koi_aqua'
 generate_html_page('data/koi_aqua', 'koi_aqua.html')
+
+# Generate HTML for 'dusk_lunge'
+generate_html_page('data/dusk_lunge', 'dusk_lunge.html')
+
+# Generate HTML for 'custom_breed'
+generate_html_page('data/custom_breed', 'custom_breed.html')
