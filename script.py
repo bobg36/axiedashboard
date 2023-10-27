@@ -2,8 +2,7 @@ import os
 import pandas as pd
 import csv
 
-# Define the path to the 'all_birds' directory
-all_birds_path = 'data/all_birds'
+
 
 file_order = ['virgin.csv', 'bred.csv', 'floor.csv', 'sales.csv', 'chart15.png', 'chart50.png']
 
@@ -55,30 +54,37 @@ def generate_folder_html(folder_path):
     folder_html += '</div>'
     return folder_html
 
-# Generate HTML for all folders within 'all_birds'
-all_birds_html = ''
-for item in os.listdir(all_birds_path):
-    item_path = os.path.join(all_birds_path, item)
-    if os.path.isdir(item_path):
-        folder_html = generate_folder_html(item_path)
-        all_birds_html += folder_html
 
-# Create a wrapper for 'all_birds'
-all_birds_html = f'<div class="all-birds-wrapper">{all_birds_html}</div>'
+def generate_html_page(directory_path, output_filename):
+    all_html = ''
+    
+    for item in os.listdir(directory_path):
+        item_path = os.path.join(directory_path, item)
+        if os.path.isdir(item_path):
+            folder_html = generate_folder_html(item_path)
+            all_html += folder_html
 
-# Create the final HTML page with the 'all_birds' content
-html_page = f'''
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-<body>
-    <h1>'all_birds' Data</h1>
-    {all_birds_html}
-</body>
-</html>
-'''
+    all_html = f'<div class="content-wrapper">{all_html}</div>'
+    
+    html_page = f'''
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    <body>
+        <h1>Data for {directory_path}</h1>
+        {all_html}
+    </body>
+    </html>
+    '''
+    
+    with open(output_filename, 'w', encoding='utf-8') as f:
+        f.write(html_page)
+    print(f'{output_filename} generated')
 
-# Save the HTML code to a file or serve it with a web framework
-with open('all_birds_data.html', 'w', encoding='utf-8') as f:
-    f.write(html_page)
+
+# Generate HTML for 'all_birds'
+generate_html_page('data/all_birds', 'all_birds.html')
+
+# Generate HTML for 'koi_aqua'
+generate_html_page('data/koi_aqua', 'koi_aqua.html')
