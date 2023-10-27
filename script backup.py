@@ -81,10 +81,9 @@ def generate_html_page(directory_path, output_filename):
     <!DOCTYPE html>
     <html>
     <head>
-        <a href="all_birds.html" class="button">all_birds</a>
-        <a href="koi_aqua.html" class="button button1">koi_aqua</a>
         <link rel="stylesheet" type="text/css" href="style.css">
     <body>
+        <h1>Data for {directory_path}</h1>
         {all_html}
     </body>
     </html>
