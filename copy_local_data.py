@@ -12,3 +12,4 @@ print(source_folder)
 
 shutil.copytree(source_folder, destination_folder)
 print(f"Contents of '{source_folder}' have been copied to '{destination_folder}'.")
+print('data folder has been updated')
