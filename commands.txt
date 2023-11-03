@@ -1,4 +1,4 @@
-1. run customQuery from: C:\Users\bobgu\Desktop\record all sales july 2023\walletpy\marketfloor\
+1. run 'generate_axiedashboard_data.py' from: C:\Users\bobgu\Desktop\record all sales july 2023\walletpy\marketfloor\
 
 
 2. run 'copy_local_data.py' to copy generated data to cwd
